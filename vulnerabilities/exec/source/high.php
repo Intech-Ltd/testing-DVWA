@@ -22,12 +22,6 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
 
 	// Determine OS and execute the ping command.
 	if( stristr( php_uname( 's' ), 'Windows NT' ) ) {
-		// Remove from $target any characters not matching 0-9 and .
-		$target = preg_replace( '/[^0-9\.]/', '', $target );
-
-		// Testing IP
-		$target = "192.168.101.1";
-
 		// Windows
 		$cmd = shell_exec( 'ping  ' . $target );
 	}
